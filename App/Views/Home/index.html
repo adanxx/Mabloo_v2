@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block style %} <link rel="stylesheet" href="/css/style.css"> {% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    
+
+    <h1>Welcome</h1>
+    <p>Hello from a Twig template, {{ current_user.name }}!</p>
+
+    <ul class="list-unstyled">
+        {% for colour in colours %}
+            <li>{{ colour }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

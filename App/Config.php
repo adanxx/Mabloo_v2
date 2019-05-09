@@ -35,7 +35,7 @@ class Config
     const DB_PASSWORD = 'secret';
 
       /**
-     * Show or hide error messages on screen
+     * Show or hide error messages on screen : Production = true : Deployment = false:
      * @var boolean
      */
     const SHOW_ERRORS = true;

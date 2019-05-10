@@ -26,5 +26,4 @@ class Items extends Authenticated
     View::renderTemplate('Items/index.html');
   }
 
-
 }

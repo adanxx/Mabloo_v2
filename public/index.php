@@ -52,13 +52,13 @@ $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('signup', ['controller' => 'signup', 'action' => 'new']);
 $router->add('login', ['controller' => 'login', 'action' => 'new']);
 $router->add('logout', ['controller' => 'login', 'action' => 'destroy']);
-$router->add('posts', ['controller' => 'post\posts', 'action' => 'index']);
+$router->add('posts', ['controller' => 'posts', 'action' => 'index']);
 
 
 //Route config path matrix:
 $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
 $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
-$router->add('Post/{controller}/{action}', ['namespace' => 'Post']);
+// $router->add('Post/{controller}/{action}', ['namespace' => 'Post']);
     
 $router->dispatch($_SERVER['QUERY_STRING']);

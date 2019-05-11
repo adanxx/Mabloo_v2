@@ -6,12 +6,17 @@
  * PHP version 7.1
  */
 
+//  ini_set('session.cookie_lifetime', '86400'); // set to expire on 10 days in seconds
+
+/**
+ * Composer
+ */
+ require_once dirname(__DIR__) . '/vendor/Twig/lib/Twig/Autoloader.php';
+
+
 /**
  * Twig.1.0  - Template-Engine
  */
-
-
-require_once dirname(__DIR__) . '/vendor/Twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
  
  

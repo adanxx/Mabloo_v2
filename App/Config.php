@@ -34,9 +34,15 @@ class Config
      */
     const DB_PASSWORD = 'secret';
 
-      /**
-     * Show or hide error messages on screen : Production = true : Deployment = false:
-     * @var boolean
-     */
+    /**
+    * Show or hide error messages on screen : Production = true : Deployment = false:
+    * @var boolean
+    */
     const SHOW_ERRORS = true;
+
+    /**
+    * Secret key for hashing
+    * @var boolean
+    */
+    const SECRET_KEY = 'secret-key'; // use the online resource for key-generator :https://randomkeygen.com/
 }

@@ -6,13 +6,31 @@
 
 {% block body %}
 
-    <h1>Posts</h1>
+   <div class="row">
 
-    <ul>
-        {% for post in posts %}
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
-        {% endfor %}
-    </ul>
+        <div class="col-md-8 col-md-offset-2">
+            <h1>Posts</h1>
+            
+            {% for post in posts %}
+            <div class="panel panel-default">
+                    <div class="panel-heading hg">
+                        <div>
+                            {{ post.title }}
+                        </div>
+                        <div>
+                            {{post.created_at}}
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                    {{ post.content }}
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+   </div>
+
+    
 
 {% endblock %}

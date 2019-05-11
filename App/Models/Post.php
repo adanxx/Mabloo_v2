@@ -25,7 +25,7 @@ class Post extends \Core\Model
             //$db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
             $db = static::getDB();
 
-            $stmt = $db->query('SELECT id, title, content FROM posts ORDER BY created_at');
+            $stmt = $db->query('SELECT * FROM posts ORDER BY created_at');
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             return $results;

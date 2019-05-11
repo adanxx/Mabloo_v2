@@ -2,9 +2,6 @@ body{
   margin-top: 3rem;
 } 
 
-
-
-
 .alert {
     border: 1px solid #ccc;
     padding: 6px;
@@ -18,4 +15,10 @@ body{
 }
 .alert-warning {
     background-color: #fcf8e3;
+}
+
+.hg{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
 }

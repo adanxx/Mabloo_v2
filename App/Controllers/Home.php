@@ -43,6 +43,8 @@ class Home extends \Core\Controller
     {
        
         $user_obj = Auth::getUser();
+ 
+        // \App\Mail::send('demo477i@gmail.com', 'Test', "This is a test", "This is a test");
 
         View::renderTemplate('Home/index.html', []);
     }

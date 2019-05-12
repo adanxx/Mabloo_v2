@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 10. 05 2019 kl. 09:49:00
+-- Genereringstid: 12. 05 2019 kl. 18:35:23
 -- Serverversion: 10.1.37-MariaDB
 -- PHP-version: 7.2.14
 
@@ -47,6 +47,25 @@ INSERT INTO `posts` (`id`, `title`, `content`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur-dump for tabellen `token`
+--
+
+CREATE TABLE `token` (
+  `token_hash` varchar(64) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `expires_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Data dump for tabellen `token`
+--
+
+INSERT INTO `token` (`token_hash`, `user_id`, `expires_at`) VALUES
+('f84e2ec3b06c88ab4b3a3d42fa85cdb44f7ffdfce452beb9a5f3272db4f3ebc8', 1, '2013-06-10 16:20:31');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur-dump for tabellen `users`
 --
 
@@ -56,6 +75,8 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` int(1) NOT NULL,
+  `password_reset_hash` varchar(64) DEFAULT NULL,
+  `password_reset_expires_at` datetime DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -63,9 +84,9 @@ CREATE TABLE `users` (
 -- Data dump for tabellen `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'dace', 'dan_47i@gmail.com', '$2y$10$b7F/igzbJdJPHnMX4IEF3erCNx8YqP75/.FAOYyqIUCHQhmK6X4pC', 1, '2019-05-09 11:58:36'),
-(6, 'Dave', 'dave@gmail.com', '$2y$10$roEgssR2H7wInICqxItseuI6DG26g0qyPf3D67x9uQsA6uhqj1jlq', 0, '2019-05-09 18:10:42');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `password_reset_hash`, `password_reset_expires_at`, `created_at`) VALUES
+(1, 'Bane', 'Bane47i@gmail.com', '$2y$10$b7F/igzbJdJPHnMX4IEF3erCNx8YqP75/.FAOYyqIUCHQhmK6X4pC', 1, NULL, NULL, '2019-05-09 11:58:36'),
+(6, 'Dave', 'demo477i@gmail.com', '$2y$10$0kS1XOYsJSdXZ1DoAZ1Px.icnTdb9BX9LzhhBuQqXm.s3YUkRuVhC', 0, NULL, NULL, '2019-05-09 18:10:42');
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -79,11 +100,19 @@ ALTER TABLE `posts`
   ADD KEY `created_at` (`created_at`);
 
 --
+-- Indeks for tabel `token`
+--
+ALTER TABLE `token`
+  ADD PRIMARY KEY (`token_hash`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indeks for tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `password_reset_hash` (`password_reset_hash`);
 
 --
 -- Brug ikke AUTO_INCREMENT for slettede tabeller

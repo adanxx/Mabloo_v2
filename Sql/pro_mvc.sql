@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 12. 05 2019 kl. 18:35:23
+-- Genereringstid: 13. 05 2019 kl. 18:42:20
 -- Serverversion: 10.1.37-MariaDB
 -- PHP-version: 7.2.14
 
@@ -77,6 +77,8 @@ CREATE TABLE `users` (
   `role` int(1) NOT NULL,
   `password_reset_hash` varchar(64) DEFAULT NULL,
   `password_reset_expires_at` datetime DEFAULT NULL,
+  `activation_hash` varchar(64) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -84,9 +86,9 @@ CREATE TABLE `users` (
 -- Data dump for tabellen `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `password_reset_hash`, `password_reset_expires_at`, `created_at`) VALUES
-(1, 'Bane', 'Bane47i@gmail.com', '$2y$10$b7F/igzbJdJPHnMX4IEF3erCNx8YqP75/.FAOYyqIUCHQhmK6X4pC', 1, NULL, NULL, '2019-05-09 11:58:36'),
-(6, 'Dave', 'demo477i@gmail.com', '$2y$10$0kS1XOYsJSdXZ1DoAZ1Px.icnTdb9BX9LzhhBuQqXm.s3YUkRuVhC', 0, NULL, NULL, '2019-05-09 18:10:42');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `password_reset_hash`, `password_reset_expires_at`, `activation_hash`, `is_active`, `created_at`) VALUES
+(1, 'Bane', 'Bane47i@gmail.com', '$2y$10$b7F/igzbJdJPHnMX4IEF3erCNx8YqP75/.FAOYyqIUCHQhmK6X4pC', 1, NULL, NULL, NULL, 0, '2019-05-09 11:58:36'),
+(6, 'Dave', 'demo477i@gmail.com', '$2y$10$0kS1XOYsJSdXZ1DoAZ1Px.icnTdb9BX9LzhhBuQqXm.s3YUkRuVhC', 0, NULL, NULL, NULL, 0, '2019-05-09 18:10:42');
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -112,7 +114,8 @@ ALTER TABLE `token`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `password_reset_hash` (`password_reset_hash`);
+  ADD UNIQUE KEY `password_reset_hash` (`password_reset_hash`),
+  ADD UNIQUE KEY `activation_hash` (`activation_hash`);
 
 --
 -- Brug ikke AUTO_INCREMENT for slettede tabeller

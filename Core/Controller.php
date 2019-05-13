@@ -89,7 +89,7 @@ abstract class Controller
         exit;
     }
 
-      /**
+    /**
      * Require the user to be logged in before giving access to the requested page.
      * Remember the requested page for later, then redirect to the login page.
      *
@@ -100,6 +100,24 @@ abstract class Controller
         if (! Auth::isLoggedIn()) {
 
             Flash::addMessage('Please login to access that page', Flash::INFO);
+
+            Auth::rememberRequestedPage();
+
+            $this->redirect('/login');
+        }
+    }
+
+     /**
+     * Require the user to be logged in before giving access to the requested page.
+     * Remember the requested page for later, then redirect to the login page.
+     *
+     * @return void
+     */
+    public function requireAdminLogin()
+    {
+        if (!null) { // !!!Create a speciale administration-user method in the Auth-Class:
+
+            Flash::addMessage('This Page require administration clearance to Access', Flash::INFO);
 
             Auth::rememberRequestedPage();
 

@@ -51,12 +51,12 @@ class Config
      *
      * @var string
      */
-    const MAILGUN_API_KEY = 'cbae11dd3e56ed74542583827614f0d5-e566273b-8b9bbb49';
+    const MAILGUN_API_KEY = 'a35e2c5a68e9d64d118d38fd9f3e0591-4a62b8e8-f86b02e6';
 
     /**
      * Mailgun domain
      *
      * @var string
      */
-    const MAILGUN_DOMAIN = 'sandbox5194ff04f5944cfcbe8891ad0dd8d04f.mailgun.org';
+    const MAILGUN_DOMAIN = 'sandbox1193e885aa68420a8afbf013b41d3b8c.mailgun.org';
 }

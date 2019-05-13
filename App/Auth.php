@@ -41,7 +41,8 @@ class Auth {
    *
    * @return void
    */
-  public static function logout(){
+  public static function logout()
+  {
     // Unset all of the session variables
     $_SESSION = [];
 

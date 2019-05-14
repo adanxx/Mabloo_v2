@@ -22,3 +22,15 @@ body{
     justify-content: space-between;
     font-weight: bold;
 }
+
+label#inputEmail-error{
+    color: red !important;
+}
+
+label#inputPassword-error{
+    color: red !important;
+}
+
+input#inputPassword{
+    overflow-wrap: inherit;
+}

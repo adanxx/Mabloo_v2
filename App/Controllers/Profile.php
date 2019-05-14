@@ -4,6 +4,7 @@
 
  use \Core\View;
  use \App\Auth;
+ use \App\Flash;
 
 
  /**
@@ -15,6 +16,19 @@
  {
 
   
+    /**
+     * Before filter - called before each action method
+     *
+     * @return void
+     */
+    protected function before()
+    {
+      parent::before();
+
+      $this->user = Auth::getUser();
+    }
+
+  
   /**
     * Show the index page
     *
@@ -22,8 +36,36 @@
   */
   public function indexAction(){
 
-    View::renderTemplate('Profile/index.html');
+    View::renderTemplate('Profile/index.html', [
+         
+      'user'=> $this->user
+    ]);
   }
+
+  /**
+    * handel the edit profile data 
+    *
+    * @return void
+  */
+  public function updateAction(){
+    
+
+    if ($this->user->updateProfile($_POST)) {
+
+      Flash::addMessage('Profile was Update');
+
+      $this->redirect('/profile/index');
+
+    } else {
+
+      View::renderTemplate('Profile/index.html', [
+          'user' => $this->user
+      ]);
+
+    }
+  }
+
+
 
 
 

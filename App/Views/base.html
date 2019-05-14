@@ -16,16 +16,19 @@
               <ul class="nav navbar-nav">
                   <li><a href="/">Home</a></li>
                   <li><a href="/posts">Posts</a></li>
+                  {% if current_user.role %}
+                  <li><a href="/admin">Admin</a></li>
+                  {% endif %}
                   
               </ul>
-              <ul class="nav navbar-nav navbar-right" style="padding-right: 50px !important;">                    
-                  {% if current_user %}
-                      <li><a href="/profile/index">Profile</a></li>
-                      <li><a href="/logout">Log out</a></li>
-                  {% else %}
-                      <li><a href="/signup">Sign up</a></li>
-                      <li><a href="/login">Log in</a></li>
-                  {% endif %}
+              <ul class="nav navbar-nav navbar-right"    style="padding-right: 50px !important;">                    
+                {% if current_user %}
+                    <li><a href="/profile/index">Profile</a></li>
+                    <li><a href="/logout">Log out</a></li>
+                {% else %}
+                    <li><a href="/signup">Sign up</a></li>
+                    <li><a href="/login">Log in</a></li>
+                {% endif %}
               </ul>
           </div>
       </nav>

@@ -60,14 +60,14 @@ $router->add('login', ['controller' => 'login', 'action' => 'new']);
 $router->add('logout', ['controller' => 'login', 'action' => 'destroy']);
 $router->add('posts', ['controller' => 'posts', 'action' => 'index']);
 $router->add('forgot', ['controller' => 'forgotpassword', 'action' => 'forgot']);
-
+$router->add('admin', ['controller' => 'Admin\Users', 'action' => 'index'],  ['namespace' => 'Admin']);
 
 
 //Route config path matrix:
 $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
 $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
-// $router->add('Post/{controller}/{action}', ['namespace' => 'Post']);
+$router->add('Post/{controller}/{action}', ['namespace' => 'Post']);
 $router->add('signup/activate/{token:[\da-f]+}', ['controller' => 'Signup', 'action' => 'activate']);
 $router->add('password/reset/{token:[\da-f]+}', ['controller' => 'Forgotpassword', 'action' => 'reset']);
     

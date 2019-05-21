@@ -71,11 +71,11 @@
 
                 <div class="form-group">
                     <label for="inputName">Name</label>
-                    <input id="inputName" name="name" placeholder="Name" autofocus value="{{ user.name }}" required class="form-control" />
+                    <input id="inputName" name="name" placeholder="Name" maxlength="50" autofocus value="{{ user.name }}" required class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="inputEmail">Email address</label>
-                    <input id="inputEmail" name="email" placeholder="email address" value="{{ user.email }}" required type="email" class="form-control" />
+                    <input id="inputEmail" name="email" placeholder="email address" maxlength="60" value="{{ user.email }}" required type="email" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Password</label>

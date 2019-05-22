@@ -5,6 +5,7 @@
  use \Core\View;
  use \App\Auth;
  use \App\Flash;
+ use \App\Controllers\Uploads;
 
 
  /**
@@ -63,6 +64,13 @@
       ]);
 
     }
+  }
+
+  public function uploadfileAction(){
+
+   Uploads::uploadFiles($_FILES);
+
+
   }
 
 

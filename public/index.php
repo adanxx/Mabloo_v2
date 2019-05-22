@@ -58,6 +58,7 @@ $router->add('', ['controller' => 'Home', 'action' => 'index']);
 $router->add('signup', ['controller' => 'signup', 'action' => 'new']);
 $router->add('login', ['controller' => 'login', 'action' => 'new']);
 $router->add('logout', ['controller' => 'login', 'action' => 'destroy']);
+$router->add('profile', ['controller' => 'profile', 'action' => 'index']);
 $router->add('posts', ['controller' => 'posts', 'action' => 'index']);
 $router->add('forgot', ['controller' => 'forgotpassword', 'action' => 'forgot']);
 $router->add('admin', ['controller' => 'Admin\Users', 'action' => 'index'],  ['namespace' => 'Admin']);

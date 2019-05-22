@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Keys;
 
 /**
  * Application configuration
@@ -51,12 +52,12 @@ class Config
      *
      * @var string
      */
-    const MAILGUN_API_KEY = 'a35e2c5a68e9d64d118d38fd9f3e0591-4a62b8e8-f86b02e6';
+    const API_KEY = Keys::MAILGUN_API_KEY;
 
     /**
-     * Mailgun domain
+     * domain
      *
      * @var string
      */
-    const MAILGUN_DOMAIN = 'sandbox1193e885aa68420a8afbf013b41d3b8c.mailgun.org';
+    const DOMAIN = Keys::MAILGUN_DOMAIN;
 }

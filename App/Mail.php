@@ -25,10 +25,10 @@ class Mail
      */
     public static function send($to, $subject, $text, $html)
     {
-        $mg = new Mailgun(Config::MAILGUN_API_KEY);
-        $domain = Config::MAILGUN_DOMAIN;
+        $mg = new Mailgun(Config::API_KEY);
+        $domain = Config::DOMAIN;
 
-        $mg->sendMessage($domain, ['from'    => 'Mabloo-support@mabloo.com',
+        $mg->sendMessage($domain, ['from'    => 'support@mabloo.com',
                                    'to'      => $to,
                                    'subject' => $subject,
                                    'text'    => $text,

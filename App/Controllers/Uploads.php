@@ -48,9 +48,10 @@ use \App\Models\User;
             $proceed[] =array(
               'name'   => $name,
               'upload' => false
-            ); 
+            );
+            // throw new \Exception("Error: Type of file is not Allowed"); 
           }
-          
+
         }
         else{
           throw new \Exception("Error: Missing Files");

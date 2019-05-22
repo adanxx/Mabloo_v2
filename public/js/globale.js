@@ -1,10 +1,27 @@
 (function(){
   "use strict";
 
-  var dropZone =  document.getElementById('drop-zone')
+  var dropZone =  document.getElementById('drop-zone');
+  var barFill = document.getElementById('bar-fill');
+  var barFillText = document.getElementById('bar-fill-text');
 
   var startuploads =  function(files){
-    console.log(files);
+    // console.log(files);
+    app.uploader({
+      files: files,
+      progress : barFill,
+      progressText: barFillText,
+      processor: "profile/uploadfile",
+
+      finished: function(data){
+        console.log('Yay it worked')
+        console.log(data)
+      },
+      error: function(){
+        console.log('There was an error');
+      }
+
+    })
   }
 
   //Standard form uploads

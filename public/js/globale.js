@@ -44,10 +44,9 @@
           uploadedElement.appendChild(uploadedStatus);
 
           uploadedFinished.appendChild(uploadedElement);
-
-          
-
         }
+
+        uploadedFinished.className = "";
 
       },
       error: function(){

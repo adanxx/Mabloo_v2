@@ -54,4 +54,17 @@ class Token
     {
         return hash_hmac('sha256', $this->token, \App\Config::SECRET_KEY);  // sha256 = 64 chars
     }
+
+    /**
+     * Generate and Update the token value
+     *
+     * @return string The hashed value
+     */
+    public function updateToken()
+    {
+        return $this->token = bin2hex(random_bytes(16));  // 16 bytes = 128 bits = 32 hex characters
+    }
+
+
+   
 }

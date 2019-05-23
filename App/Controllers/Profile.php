@@ -5,6 +5,7 @@
  use \Core\View;
  use \App\Auth;
  use \App\Flash;
+ use \App\Token;
  use \App\Controllers\Uploads;
 
 
@@ -16,18 +17,20 @@
  class Profile extends Authenticated
  {
 
+  private $token;
   
-    /**
-     * Before filter - called before each action method
-     *
-     * @return void
-     */
-    protected function before()
-    {
-      parent::before();
+  /**
+   * Before filter - called before each action method
+   *
+   * @return void
+   */
+  protected function before()
+  {
+    parent::before();
 
-      $this->user = Auth::getUser();
-    }
+    $this->user = Auth::getUser();
+    
+  }
 
   
   /**
@@ -37,10 +40,15 @@
   */
   public function indexAction(){
 
+    $this->token = new Token();
+
     View::renderTemplate('Profile/index.html', [
          
-      'user'=> $this->user
+      'user'=> $this->user,
+      'token' => $this->token->getValue()
+
     ]);
+
   }
 
   /**
@@ -49,18 +57,37 @@
     * @return void
   */
   public function updateAction(){
-    
 
+    
     if ($this->user->updateProfile($_POST)) {
 
-      Flash::addMessage('Profile was Update');
+      $this->token = new Token($_POST['token']);
+     
+      if(isset($_POST['token']) && $_POST['token'] === $this->token->getValue()){
 
-      $this->redirect('/profile/index');
+     
+        Flash::addMessage('Profile was Update');
+        $this->redirect('/profile/index');
+
+      }else{
+
+
+        Flash::addMessage('Profile was not Update', Flash::WARNING);
+
+        View::renderTemplate('Profile/index.html', [
+          'user' => $this->user,
+          'token'=> $this->token->updateToken()
+        ]);
+        
+      }
+
 
     } else {
 
+      Flash::addMessage('Profile was not Update', Flash::INFO);
+
       View::renderTemplate('Profile/index.html', [
-          'user' => $this->user
+        'user' => $this->user
       ]);
 
     }

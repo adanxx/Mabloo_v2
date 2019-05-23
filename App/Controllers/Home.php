@@ -46,6 +46,20 @@ class Home extends \Core\Controller
  
         // \App\Mail::send('demo477i@gmail.com', 'Test', "This is a test", "This is a test");
 
-        View::renderTemplate('Home/index.html', []);
+        View::renderTemplate('Home/hm.html', []);
     }
+
+     /**
+     * Generated the siteResult Page for the search term
+     *
+     * @return void
+     */
+    public function searchAction()
+    {
+       
+       echo $_GET['term'] ." : ".__LINE__;
+
+    }
+
+
 }

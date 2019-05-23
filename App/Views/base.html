@@ -9,25 +9,29 @@
     
 </head>
 <body>
-    <div class="container-fluid px-5">
+    <div class="container-fluid px-5 top-nav-container">
 
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar">
           <div class="container-fluid">
-              <ul class="nav navbar-nav">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/posts">Posts</a></li>
+              <ul class="nav navbar-nav nav-left">
+                  <li>
+                    <a href="/" class="brand-tag">
+                      <img src="img/logo/brandStart.png" alt="" class="brand-nav">
+                    </a>
+                  </li>
                   {% if current_user.role %}
+                  <li><a href="/posts" class="btn-post">Posts</a></li>
                   <li><a href="/admin">Admin</a></li>
                   {% endif %}
                   
               </ul>
-              <ul class="nav navbar-nav navbar-right"    style="padding-right: 50px !important;">                    
+              <ul class="nav navbar-nav navbar-right nav-right">                    
                 {% if current_user %}
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/logout">Log out</a></li>
                 {% else %}
                     <li><a href="/signup">Sign up</a></li>
-                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/login" class="btn-login">Log in</a></li>
                 {% endif %}
               </ul>
           </div>

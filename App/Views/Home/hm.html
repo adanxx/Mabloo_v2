@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Mabloo{% endblock %}
+
+{% block body %}
+
+<div class="wrapper indexPage"> 
+  <div class="mainSection">
+        <div class="logoContainer">
+            <img src="img/logo/logo.png" alt="logo_image">
+        </div>      
+
+        <div class="searchContainer">
+            <form action="home/search" method="GET">
+                    <input type="text" class="searchbox" name="term" placeholder="What are You Search for..">
+                    <input type="submit" class="search-btn"  value="Search">
+            </form>
+        
+        </div>
+    </div>
+
+</div>
+  
+
+{% endblock %}

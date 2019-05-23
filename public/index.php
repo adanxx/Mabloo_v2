@@ -69,6 +69,9 @@ $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
 $router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
 $router->add('Post/{controller}/{action}', ['namespace' => 'Post']);
+
+$router->add('home/search/{term:[\da-f]+}', ['controller' => 'home', 'action' => 'search']);
+
 $router->add('signup/activate/{token:[\da-f]+}', ['controller' => 'Signup', 'action' => 'activate']);
 $router->add('password/reset/{token:[\da-f]+}', ['controller' => 'Forgotpassword', 'action' => 'reset']);
     

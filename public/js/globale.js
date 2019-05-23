@@ -4,6 +4,7 @@
   var dropZone =  document.getElementById('drop-zone');
   var barFill = document.getElementById('bar-fill');
   var barFillText = document.getElementById('bar-fill-text');
+  var uploadedFinished = document.getElementById('upload-finished');
 
   var startuploads =  function(files){
     // console.log(files);
@@ -15,15 +16,37 @@
 
       finished: function(data){
 
-        var x ;
+        var i ;
         var uploadedElement;
         var uploadedAnchor;
         var uploadedStatus;
+        var currFile;
+        
+       
+        for(i = 0; i < data.length; i++){
 
-        for(x = 0; x < data.length; x++){
+           currFile =  data[i];
+
           uploadedElement = document.createElement('div');
+          uploadedElement.className = "upload-console-upload";
 
-          console.log(uploadedElement);
+          uploadedAnchor = document.createElement('a');
+          uploadedAnchor.textContent = currFile.name;
+
+          if(currFile.uploaded){
+            // uploadedAnchor.href = 'uploads/' + currFile.file;
+          }
+
+          uploadedStatus = document.createElement('span');
+          uploadedStatus.textContent =  currFile.uploaded ? "Uploaded" : "Failed";
+          
+          uploadedElement.appendChild(uploadedAnchor);
+          uploadedElement.appendChild(uploadedStatus);
+
+          uploadedFinished.appendChild(uploadedElement);
+
+          
+
         }
 
       },

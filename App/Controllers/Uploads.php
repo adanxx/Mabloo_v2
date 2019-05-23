@@ -40,14 +40,14 @@ use \App\Models\User;
             $proceed[] =array(
               'name'   => $name,
               'file'   => $file,
-              'upload' => true
+              'uploaded' => true
              ); 
 
           }
           else{
             $proceed[] =array(
               'name'   => $name,
-              'upload' => false
+              'uploaded' => false
             );
             // throw new \Exception("Error: Type of file is not Allowed"); 
           }

@@ -9,13 +9,23 @@
     // console.log(files);
     app.uploader({
       files: files,
-      progress : barFill,
-      progressText: barFillText,
+      progressBar: barFill,
+      progressBarText: barFillText,
       processor: "profile/uploadfile",
 
       finished: function(data){
-        console.log('Yay it worked')
-        console.log(data)
+
+        var x ;
+        var uploadedElement;
+        var uploadedAnchor;
+        var uploadedStatus;
+
+        for(x = 0; x < data.length; x++){
+          uploadedElement = document.createElement('div');
+
+          console.log(uploadedElement);
+        }
+
       },
       error: function(){
         console.log('There was an error');

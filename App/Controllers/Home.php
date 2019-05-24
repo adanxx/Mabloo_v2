@@ -51,7 +51,7 @@ class Home extends \Core\Controller
        $user_obj = Auth::getUser();
  
        // \App\Mail::send('demo477i@gmail.com', 'Test', "This is a test", "This is a test");
-       View::renderTemplate('Home/hm.html', []);
+       View::renderTemplate('Home/index.html', []);
     }
 
      /**
@@ -69,7 +69,8 @@ class Home extends \Core\Controller
 
       View::render('Home/SiteSearch.php',[
           'count'=>$count,
-          'sites'=>$siteResult
+          'sites'=>$siteResult,
+          'searchTerm'=>$_GET['term']
       ]);
       
      //   echo $_GET['term'] ." : ".__LINE__;

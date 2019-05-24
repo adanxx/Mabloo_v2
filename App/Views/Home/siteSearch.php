@@ -27,7 +27,7 @@
                     
                     <div class="searchBarContainer">
                         <!-- <input type="hidden" name="type" value="" > -->
-                        <input type="text" name="term" class="searchBox" value=""> <!--Santize the value-->
+                        <input type="text" name="term" class="searchBox" value="<?php echo $searchTerm;  ?>"> <!--Santize the value-->
                         <button class="search-icon-btn">
                             <img src="../../../public/img/icons/search-icon.png" alt="search-icon" >
                         </button>

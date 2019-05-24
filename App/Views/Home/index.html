@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Mabloo{% endblock %}
 
 {% block body %}
-    
-   <div style="text-align:center;">
-        <h1>Welcome</h1>
-        <p>Hello from a Twig template, {{ current_user.name }}!</p>
-    
-        <ul class="list-unstyled">
-            {% for colour in colours %}
-                <li>{{ colour }}</li>
-            {% endfor %}
-        </ul>
-   </div>
 
+<div class="wrapper indexPage"> 
+  <div class="mainSection">
+        <div class="logoContainer">
+            <img src="img/logo/logo.png" alt="logo_image">
+        </div>      
+
+        <div class="searchContainer">
+            <form action="home/search" method="GET">
+                    <input type="text" class="searchbox" name="term" placeholder="What are You Search for..">
+                    <input type="submit" class="search-btn"  value="Search">
+            </form>
+        
+        </div>
+    </div>
+
+</div>
+  
 
 {% endblock %}

@@ -57,7 +57,10 @@ class Home extends \Core\Controller
     public function searchAction()
     {
        
-       echo $_GET['term'] ." : ".__LINE__;
+      View::renderTemplate('Home/SiteSearch.html',[]);
+      
+      echo $_GET['term'] ." : ".__LINE__;
+
 
     }
 

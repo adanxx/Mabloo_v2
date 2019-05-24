@@ -20,4 +20,4 @@ $.validator.addMethod('validPassword',
     'Must contain at least one letter and one number'
 );
 
-
+console.log('App-Js is Online');

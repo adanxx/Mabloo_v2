@@ -23,11 +23,11 @@
 
             <div class="searchContainerbox">
 
-                <form action="home/search" method="GET">
+                <form action="/home/search" method="GET">
                     
                     <div class="searchBarContainer">
-                        <input type="hidden" name="type" value="" >
-                        <input type="text" name="term" class="searchBox" value="">
+                        <!-- <input type="hidden" name="type" value="" > -->
+                        <input type="text" name="term" class="searchBox" value=""> <!--Santize the value-->
                         <button class="search-icon-btn">
                             <img src="../../../public/img/icons/search-icon.png" alt="search-icon" >
                         </button>
@@ -41,16 +41,25 @@
 
         <div class="tabsContainer">
             <ul class="tablist">
-                <li class="<?php echo $type == 'sites' ? 'active' :'' ?>">
-                    <a href='<?php echo "search.php?term=$term&type=sites";?>'>Site</a>
+                <li class="active">
+                    <a href='#'>Site</a>
                 </li>
                 <li  class="">
-                    <a href="">Images</a>
+                    <a href="#" title="Link disabled" disabled>Images</a>
                 </li>
                 
             </ul>
         </div>
-    </div> 
+    </div>
+
+    <div class="mainResultSection">
+        <p class='resultCount'> <?php echo $count; ?>  result found</p>    
+        
+        <?php echo $sites; ?>
+
+    </div>
+
+
 </div> 
 
   
@@ -59,7 +68,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<script src="../../../public/js/app.js"></script>
 
 </body>
 </html>

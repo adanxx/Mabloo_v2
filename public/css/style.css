@@ -368,3 +368,47 @@ a.brand-tag:hover{
    font-size: 14px;
    font-weight: bold;
 }
+
+/***MAIN-SECTION-RESULT-COUNT*****/
+.mainResultSection{
+    flex: 1;
+}
+   
+.mainResultSection .resultCount{
+ font-size: 13px; 
+ font-weight: bolder;
+ color: #808080;
+ margin-left: 175px;
+ margin-bottom: 15px;
+}
+
+/*****SITE-LINK-RESULTS*******/
+
+.mainResultSection .siteResults{
+    margin-left: 172px;
+}
+ 
+.resultContainer{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+ 
+.resultContainer .title{
+    margin: 0;
+}
+ 
+.resultContainer .title a{
+    color: #1a0dab;
+    font-size: 22px;
+    font-weight: normal;
+}
+ 
+.resultContainer .url{
+    color: #006621;
+    font-size: 14px;
+}
+ 
+.resultContainer .description{
+    font-size: 13px;
+}

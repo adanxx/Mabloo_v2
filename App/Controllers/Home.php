@@ -3,7 +3,10 @@
 namespace App\Controllers;
 
 use \Core\View;
+use \Core\Crawler;
 use \App\Auth;
+use \App\Models\SiteResultProvider;
+
 
 /**
  * Home controller
@@ -20,8 +23,7 @@ class Home extends \Core\Controller
      */
     protected function before()
     {
-        //echo "(before) ";
-        //return false;
+      
     }
 
     /**
@@ -41,12 +43,15 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
+       /**
+       * Start The Crawling for data Website: 
+       */
+        // $crawler = new Crawler();
        
-        $user_obj = Auth::getUser();
+       $user_obj = Auth::getUser();
  
-        // \App\Mail::send('demo477i@gmail.com', 'Test', "This is a test", "This is a test");
-
-        View::renderTemplate('Home/hm.html', []);
+       // \App\Mail::send('demo477i@gmail.com', 'Test', "This is a test", "This is a test");
+       View::renderTemplate('Home/hm.html', []);
     }
 
      /**
@@ -57,9 +62,19 @@ class Home extends \Core\Controller
     public function searchAction()
     {
        
-      View::renderTemplate('Home/SiteSearch.html',[]);
+      $searchResult = new SiteResultProvider();
+
+      $count = $searchResult->getNumResults($_GET['term']);
+      $siteResult = $searchResult->getResultHtml(1, 2, $_GET['term']);
+
+      View::render('Home/SiteSearch.php',[
+          'count'=>$count,
+          'sites'=>$siteResult
+      ]);
       
-      echo $_GET['term'] ." : ".__LINE__;
+     //   echo $_GET['term'] ." : ".__LINE__;
+
+     
 
 
     }

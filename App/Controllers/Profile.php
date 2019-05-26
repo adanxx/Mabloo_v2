@@ -75,7 +75,7 @@
         Flash::addMessage('Profile was not Update', Flash::WARNING);
 
         View::renderTemplate('Profile/index.html', [
-          'user' => $this->user,
+          'user' => htmlspecialchars($this->user),
           'token'=> $this->token->updateToken()
         ]);
         
@@ -87,7 +87,7 @@
       Flash::addMessage('Profile was not Update', Flash::INFO);
 
       View::renderTemplate('Profile/index.html', [
-        'user' => $this->user
+        'user' => htmlspecialchars($this->user)
       ]);
 
     }

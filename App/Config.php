@@ -21,19 +21,19 @@ class Config
      * Database name
      * @var string
      */
-    const DB_NAME = 'clone';
+    const DB_NAME = 'pro_mvc';
 
     /**
      * Database user
      * @var string
      */
-    const DB_USER = 'root';
+    const DB_USER = 'admin';
 
     /**
      * Database password
      * @var string
      */
-    const DB_PASSWORD = '';
+    const DB_PASSWORD = 'secret';
 
     /**
     * Show or hide error messages on screen : Production = true : Deployment = false:

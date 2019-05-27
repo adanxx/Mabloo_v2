@@ -7,6 +7,7 @@
  use \App\Flash;
  use \App\Token;
  use \App\Controllers\Uploads;
+ use \App\Models\Upload;
 
 
  /**

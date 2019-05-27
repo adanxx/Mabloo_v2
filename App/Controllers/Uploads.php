@@ -49,7 +49,7 @@ use \App\Models\User;
               'name'   => $name,
               'uploaded' => false
             );
-            // throw new \Exception("Error: Type of file is not Allowed"); 
+            // throw new \Exception("Error: Type of file is not Allowed". $data['file']['error'] ); 
           }
 
         }

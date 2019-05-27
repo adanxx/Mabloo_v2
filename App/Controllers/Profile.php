@@ -7,7 +7,7 @@
  use \App\Flash;
  use \App\Token;
  use \App\Controllers\Uploads;
- use \App\Models\Upload;
+ use \App\Models\Files;
 
 
  /**
@@ -96,7 +96,11 @@
 
   public function uploadfileAction(){
 
+   
+
    Uploads::uploadFiles($_FILES);
+  
+   Files::save($_FILES);
 
 
   }

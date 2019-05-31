@@ -25,7 +25,7 @@ class Auth {
     session_regenerate_id(true);
 
     $_SESSION['user_id'] = $user->id;
-    // $_SESSION['role']   = $user->role;
+    $_SESSION['role']   = $user->role;
 
     if ($remember_me) {
 
@@ -47,7 +47,7 @@ class Auth {
     // Unset all of the session variables
     $_SESSION = [];
 
-    // Delete the session cookie
+    // Note: This will destroy the session, and not just the session data!
     if (ini_get('session.use_cookies')) {
       
       $params = session_get_cookie_params();

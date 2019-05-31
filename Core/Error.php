@@ -36,7 +36,6 @@ class Error
      */
     public static function exceptionHandler($exception)
     {
-
       // Code is 404 (not found) or 500 (general error)
       $code = $exception->getCode();
       if ($code != 404) {

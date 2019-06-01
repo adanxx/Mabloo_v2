@@ -115,7 +115,7 @@ abstract class Controller
      */
     public function requireAdminLogin()
     {
-        if (!null) { // !!!Create a speciale administration-user method in the Auth-Class:
+        if (!Auth::isAdmin()) { // !!!Create a speciale administration-user method in the Auth-Class:
 
             Flash::addMessage('This Page require administration clearance to Access', Flash::INFO);
 

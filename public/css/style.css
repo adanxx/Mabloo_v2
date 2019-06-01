@@ -86,10 +86,16 @@ a.btn-login:hover{
 a.btn-post,
 a.btn-profile,
 a.btn-admin{
-    padding-top: 30px !important;
-    font-size: 18px;
-    font-weight: bold;
+
+    border: none;
+    border-radius: 5px;
+    padding: 12px 32px !important;
+    font-weight: 600;
     font-family: serif;
+    margin-left: 4px;
+    outline: none;
+    margin-top: 15px;
+    font-size: 16px;
 }
 
 .brand-nav{

@@ -19,8 +19,8 @@
                       <img src="img/logo/brandStart.png" alt="" class="brand-nav">
                     </a>
                   </li>
-                  {% if current_user.role %}
                   <li><a href="/posts" class="btn-post">Posts</a></li>
+                  {% if current_user.role %}
                   <li><a href="/admin" class="btn-admin">Admin</a></li>
                   {% endif %}
                   

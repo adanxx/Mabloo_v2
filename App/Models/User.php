@@ -137,6 +137,8 @@
     public static function findByEmail($email)
     {
 
+      $email =  htmlspecialchars($email);
+
       $sql = 'SELECT * FROM users WHERE email = :email';
 
       $db = static::getDB();

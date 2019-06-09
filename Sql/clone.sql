@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2019 at 03:49 PM
+-- Generation Time: Jun 09, 2019 at 02:21 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -286,7 +286,8 @@ CREATE TABLE `uploads` (
 --
 
 INSERT INTO `uploads` (`id`, `filename`, `user_id`, `filePath`, `file_type`, `file_size`, `created_at`) VALUES
-(4, 'meditation.PNG', 1, '../uploads/5cebd5e870b920.688502271558959592.png', 'png', 1171269, '2019-05-27 14:19:52');
+(4, 'meditation.PNG', 1, '../uploads/5cebd5e870b920.688502271558959592.png', 'png', 1171269, '2019-05-27 14:19:52'),
+(5, '17935469_xl.jpg', 1, '../uploads/5cfcf9c21ae2b7.909264281560082882.jpg', 'jpg', 1652398, '2019-06-09 14:21:22');
 
 -- --------------------------------------------------------
 
@@ -313,7 +314,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `password_reset_hash`, `password_reset_expires_at`, `activation_hash`, `is_active`, `created_at`) VALUES
 (1, 'Bane', 'Bane47i@gmail.com', '$2y$10$b7F/igzbJdJPHnMX4IEF3erCNx8YqP75/.FAOYyqIUCHQhmK6X4pC', 1, NULL, NULL, NULL, 1, '2019-05-09 11:58:36'),
-(6, 'Dave', 'demo477i@gmail.com', '$2y$10$0kS1XOYsJSdXZ1DoAZ1Px.icnTdb9BX9LzhhBuQqXm.s3YUkRuVhC', 0, NULL, NULL, NULL, 0, '2019-05-09 18:10:42');
+(6, 'Dave', 'demo477i@gmail.com', '$2y$10$0kS1XOYsJSdXZ1DoAZ1Px.icnTdb9BX9LzhhBuQqXm.s3YUkRuVhC', 0, NULL, NULL, NULL, 0, '2019-05-09 18:10:42'),
+(0, 'Sol Kane', 'test2@gmail.com', '$2y$10$pwEgYyFhLaaQkRO0EingHexGkTVlOvr9Z1C5/PQNz6a9fZUFZUFWy', 0, NULL, NULL, '37c5cf6a3e540568b62d8da109e23c2572bfe8ab4d6970b5f44823190f1e0c0c', 0, '2019-05-30 13:36:41');
 
 --
 -- Indexes for dumped tables
@@ -345,7 +347,7 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT for table `uploads`
 --
 ALTER TABLE `uploads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
